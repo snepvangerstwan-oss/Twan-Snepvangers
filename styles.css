@@ -1,4 +1,4 @@
-/* 1. VARIABLES & THEME SETUP
+/* 1. VARIABLES & THEME SETUP (4)
    ========================================= */
 :root {
   /* Colors */
@@ -29,7 +29,7 @@ body {
   min-height: 100vh;
   margin: 0;
 
-  /* Flexbox setup to stick footer to bottom */
+  /* Flexbox setup to stick footer to bottom (5) */
   display: flex;
   flex-direction: column;
 
@@ -37,7 +37,7 @@ body {
   font-family: "Inter", sans-serif;
   color: var(--color-text-white);
 
-  /* Background System */
+  /* Background System (6)*/
   background-color: var(--color-bg-cream);
   background-image: 
     /* Top-left Blue */
@@ -75,7 +75,7 @@ p {
   margin-bottom: 1em;
 }
 
-/* 3. GLASS MORPHISM SYSTEM
+/* 3. GLASS MORPHISM SYSTEM (7)
    ========================================= */
 .glass-panel,
 .glass-panel-collage,
@@ -143,7 +143,6 @@ header {
   padding: 0 30px;
 }
 
-/* Specific overrides */
 .hero-section-projects {
   font-size: 1.7em;
 }
@@ -192,7 +191,7 @@ header {
   margin-left: 5vh;
 }
 
-/* 7. PROJECTS GRID SYSTEM
+/* 7. PROJECTS GRID SYSTEM (8)
    ========================================= */
 .projects-section {
   max-width: 1000px;
@@ -213,7 +212,7 @@ header {
   grid-template-columns: 1fr;
 }
 
-/* Tablet & Desktop: 2 columns */
+/* Tablet & Desktop: 2 columns (9)*/
 @media (min-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr 1fr;
