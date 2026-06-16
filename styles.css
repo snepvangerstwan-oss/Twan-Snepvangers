@@ -272,21 +272,19 @@ header {
 
 /* 9. DUAL COLUMN SYSTEM (Images & Text)
    ========================================= */
-/* Replace the current .dual-row rules with this */
 .dual-row {
-  display: grid;
-  gap: 20px;
-  max-width: 1000px;
-  margin: 2rem auto; /* Switched vh to rem, see point 3 */
+  display: flex;
+  flex-direction: column; /* Stack on mobile */
+  gap: 20px; /* Adds the margin between the two squares */
+  max-width: 1000px; /* Matches with main content width */
+  margin: 2vh auto; /* Centers the section on the page */
   width: 100%;
-  /* Default: Mobile (1 column) */
-  grid-template-columns: 1fr; 
 }
 
-/* Tablet & Desktop: 2 columns */
+/* Tablet & Desktop: Side by side */
 @media (min-width: 768px) {
   .dual-row {
-    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
   }
 }
 
