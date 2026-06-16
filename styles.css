@@ -1,18 +1,22 @@
 /* 1. VARIABLES & THEME SETUP (4)
    ========================================= */
 :root {
-  /* Colors */
-  --color-bg-cream: #fff7f2;
+  /* Keep your brand colors */
   --color-brand-blue: #002eff;
   --color-brand-orange: #ff5c00;
   --color-text-dark: #121212;
   --color-text-light: #e0e0e0;
   --color-text-white: #fafafa;
-  --color-glass-border: rgba(255, 255, 255, 0.3);
-  --color-glass-bg: rgba(255, 255, 255, 0.25);
+  
+  /* NEW: Deep, dark base color instead of cream */
+  --color-bg-base: #3a3a9f; 
 
-  /* Spacing en Sizes */
-  --radius-std: 24px; /* Standard corner radius */
+  /* NEW: Slightly more transparent glass for a darker theme */
+  --color-glass-border: rgba(255, 255, 255, 0.2);
+  --color-glass-bg: rgba(255, 255, 255, 0.15);
+
+  /* Spacing and Sizes */
+  --radius-std: 24px; 
   --glass-blur: 20px;
 }
 
@@ -24,12 +28,16 @@
   padding: 0;
 }
 
+@keyframes fluidMotion {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 body {
   /* Layout reset */
   min-height: 100vh;
   margin: 0;
-
-  /* Flexbox setup to stick footer to bottom (5) */
   display: flex;
   flex-direction: column;
 
@@ -37,22 +45,22 @@ body {
   font-family: "Inter", sans-serif;
   color: var(--color-text-white);
 
-  /* Background System (6)*/
-  background-color: var(--color-bg-cream);
+  /* Updated Background System */
+  background-color: var(--color-bg-base);
   background-image: 
-    /* Top-left Blue */
     radial-gradient(at 0% 0%, var(--color-brand-blue) 0px, transparent 60%),
-    /* Bottom-left Orange */
     radial-gradient(at 0% 90%, var(--color-brand-orange) 0px, transparent 60%),
-    /* Bottom-right Blue */
     radial-gradient(at 90% 100%, var(--color-brand-blue) 0px, transparent 40%),
-    /* Top-right Orange */
     radial-gradient(at 100% 0%, var(--color-brand-orange) 0px, transparent 50%),
-    /* Center Cream Blend */
-    radial-gradient(at 50% 50%, #fff9f6 0px, transparent 100%);
+    /* Replaced the bright white center blob with a very soft, dark blue blend */
+    radial-gradient(at 50% 50%, rgba(0, 46, 255, 0.15) 0px, transparent 100%);
 
   background-attachment: fixed;
   background-repeat: no-repeat;
+  
+  /* Your animation rules */
+  background-size: 200% 200%;
+  animation: fluidMotion 15s ease infinite;
 }
 
 main {
@@ -97,7 +105,8 @@ p {
 }
 
 .glass-button:hover {
-  background: rgba(105, 105, 105, 0.35);
+  background: rgba(255, 255, 255, 0.35); /* Slightly brighter than before */
+  box-shadow: 0 0 15px rgba(0, 46, 255, 0.3); /* Subtle blue glow */
 }
 
 .glass-panel-collage {
@@ -252,7 +261,7 @@ header {
 
 .card-content h3 {
   margin-bottom: 10px;
-  color: var(--color-brand-blue);
+  color: var(--color-brand-orange);
 }
 
 /* 8. FOOTER & CONTACT
