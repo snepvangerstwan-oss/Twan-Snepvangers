@@ -181,14 +181,14 @@ header {
   flex-direction: row;
   align-items: center;
   max-width: 1000px;
-  margin: auto;
-  padding: 2vh;
-  margin-bottom: 2vh;
+  /* 0 top, auto sides, 2rem bottom. Ensures consistent gaps between all sections */
+  margin: 0 auto 2rem auto; 
+  padding: 2rem; /* Unified internal spacing */
 }
 
 .full-card img {
   max-width: 20vh;
-  margin-left: 5vh;
+  margin-left: 2rem;
 }
 
 /* 7. PROJECTS GRID SYSTEM (8)
@@ -226,17 +226,28 @@ header {
   text-align: center;
 }
 
-.card-image img {
-  width: 50%; /* Ensures it fills the width */
-  max-width: 100%;
-  height: auto;
-  padding: 2vh;
-  object-fit: cover;
+.card-image {
+  height: 220px; /* Forces every image box to be exactly this tall */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-bottom: 1px solid var(--color-glass-border);
+  padding: 1.5rem; 
 }
 
+/* 2. Make the image fit inside the locked container */
+.card-image img {
+  max-width: 80%; /* Keeps it from touching the edges */
+  max-height: 100%;
+  object-fit: contain; /* Ensures the whole image is visible without cropping */
+}
+
+/* 3. Force the text content to stretch equally */
 .card-content {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Makes the text area grow to fill available space uniformly */
 }
 
 .card-content h3 {
@@ -273,19 +284,25 @@ header {
 /* 9. DUAL COLUMN SYSTEM (Images & Text)
    ========================================= */
 .dual-row {
-  display: flex;
-  flex-direction: column; /* Stack on mobile */
-  gap: 20px; /* Adds the margin between the two squares */
-  max-width: 1000px; /* Matches with main content width */
-  margin: 2vh auto; /* Centers the section on the page */
+display: grid;
+  gap: 20px; 
+  max-width: 1000px; 
+  /* Matches the exact margin of .full-card so they stack perfectly */
+  margin: 0 auto 2rem auto; 
   width: 100%;
+  grid-template-columns: 1fr; /* Mobile default */
 }
 
 /* Tablet & Desktop: Side by side */
 @media (min-width: 768px) {
-  .dual-row {
-    flex-direction: row;
+.dual-row {
+    grid-template-columns: 1fr 1fr;
   }
+}
+
+/* If an item is alone in a dual-row, make it span full width */
+.dual-row > *:only-child {
+  grid-column: 1 / -1; 
 }
 
 .square-glass-panel {
@@ -295,9 +312,7 @@ header {
   border: 1px solid var(--color-glass-border);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   border-radius: var(--radius-std);
-
-  flex: 1; /* Takes 50% width */
-  aspect-ratio: 1 / 1; /* Forces square shape */
+  aspect-ratio: 1 / 1; 
   overflow: hidden;
   display: flex;
 }
@@ -308,10 +323,10 @@ header {
   object-fit: cover;
   display: block;
 }
+
 .split-text-card {
-  flex: 1; /* Takes 50% width */
-  padding: 30px; /* Adds room for text */
+  padding: 2rem; /* Matches the 2rem padding of .full-card exactly */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers text vertically */
+  justify-content: center; 
 }
