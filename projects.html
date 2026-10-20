@@ -6,11 +6,53 @@
     <title>Twan Snepvangers | Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <style>
+      .project-tags,
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 0.75rem 0 1rem 0;
+      }
+      .project-tag,
+      .tag {
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        line-height: 1.2;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        transition: background 0.2s ease, border-color 0.2s ease;
+      }
+      .project-tag:hover,
+      .tag:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.35);
+      }
+      .square-glass-panel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
+      .square-glass-panel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: inherit;
+        display: block;
+      }
+    </style>
   </head>
 
   <body>
@@ -230,6 +272,53 @@
         </div>
       </section>
 
+      <section class="glass-panel full-card">
+        <div>
+          <h2>Module 5</h2>
+          <p>
+            During my fifth module, Humane by Design, I explored the ethical dimensions and speculative futures of human-centered technology. In an era where generative AI challenges conventional pedagogy, this module challenged me to create thoughtful design fiction and interactive prototypes that foster genuine understanding, critical inquiry, and authentic learning experiences.
+          </p>
+        </div>
+      </section>
+
+      <section class="dual-row">
+        <div class="square-glass-panel">
+          <img
+            src="assets/img/Game-Changer Journey - Frame 1.jpg"
+            alt="The Teach-Back Robot speculative design fiction prototype"
+          />
+        </div>
+      </section>
+
+      <section class="dual-row">
+        <div class="glass-panel split-text-card">
+          <h2>The Teach-Back Robot</h2>
+          <div class="project-tags tags">
+            <span class="project-tag tag">AI</span>
+            <span class="project-tag tag">Design Fiction</span>
+            <span class="project-tag tag">Prototyping</span>
+          </div>
+          <p>
+            Developed for Creative Technology Module 5 (Humane by Design), The
+            Teach-Back Robot is a speculative design fiction desk companion
+            designed for a 2076 future where generative AI can instantly supply
+            answers to virtually any conventional exam question. Rather than
+            relying on traditional testing where students might passively depend
+            on AI tools, the project inverts the dynamic: students prove authentic
+            comprehension and subject mastery by actively teaching topics to a
+            curious, confused robot.
+          </p>
+          <p>
+            To evaluate depth of knowledge and expose device-assisted cheating,
+            the robot incorporates key interactive mechanisms: strategically planted
+            mistakes to verify if students can spot misconceptions, probing
+            follow-up questions built on the student's own words, and reply
+            timing analysis to detect pauses caused by consulting external AI.
+            Through this tangible interaction, the project envisions an educational
+            future rooted in critical inquiry and genuine understanding.
+          </p>
+        </div>
+      </section>
 
       <section class="contact-section">
         <p>Like what you see?</p>
